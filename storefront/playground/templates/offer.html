@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta - Szkoła Języków Obcych</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .offer-card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .offer-description {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Szkoła języków obcych</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Strona Główna</a>
+        <a href="offer.html">Oferta</a>
+        <a href="login.html">Logowanie</a>
+        <a href="register.html">Rejestracja</a>
+    </nav>
+
+    <section>
+        <div class="offer-card">
+            <h2 class="offer-title">Kursy Angielskiego</h2>
+            <p class="offer-description">Rozpocznij swoją przygodę z językiem angielskim. Oferujemy kursy dla wszystkich poziomów zaawansowania, zarówno dla dzieci, młodzieży, jak i dorosłych.</p>
+            <p class="offer-description">Nasi doświadczeni instruktorzy zapewnią ci skuteczną naukę w przyjaznej atmosferze.</p>
+            <form method="post" action="{% url 'signForCourse' %}">
+                {% csrf_token %}
+                <button type="submit" name="course" value="english">Zapisz się</button>
+            </form>
+        </div>
+
+        <div class="offer-card">
+            <h2 class="offer-title">Kursy Hiszpańskiego</h2>
+            <p class="offer-description">Odkryj piękno języka hiszpańskiego. Nasze kursy hiszpańskiego są dostępne dla wszystkich grup wiekowych i poziomów zaawansowania.</p>
+            <p class="offer-description">Zapewniamy interaktywne zajęcia, które pomogą ci swobodnie posługiwać się językiem hiszpańskim.</p>
+            <form method="post" action="{% url 'signForCourse' %}">
+                {% csrf_token %}
+                <button type="submit" name="course" value="spanish">Zapisz się</button>
+            </form>
+        </div>
+
+        <!-- Dodaj kolejne sekcje z ofertami według potrzeb -->
+
+    </section>
+
+    <footer>
+        &copy; 2023 Szkoła Języków Obcych. Wszelkie prawa zastrzeżone.
+    </footer>
+
+</body>
+</html>
